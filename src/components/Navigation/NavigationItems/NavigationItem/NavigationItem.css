@@ -1,0 +1,22 @@
+.NavigationItem {
+    box-sizing: border-box;
+    display: block;
+    font-size: 20px;
+}
+
+.NavigationItem a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding: 0px 20px;
+}
+
+.NavigationItem a:hover,
+.NavigationItem a:active,
+.NavigationItem a.active {
+    padding: 11px 20px;
+    background-color: #00759E;
+    color: white;
+}
