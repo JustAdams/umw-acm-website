@@ -1,0 +1,8 @@
+
+.Input {
+    margin: 5px;
+}
+
+.Input:focus {
+    background-color: lightblue;
+}
