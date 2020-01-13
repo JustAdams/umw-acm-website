@@ -5,7 +5,6 @@ const input = (props) => (
     <div>
         <input
             className='Input'
-            key={props.key}
             type={props.elementType}
             value={props.value}
             placeholder={props.placeholder}

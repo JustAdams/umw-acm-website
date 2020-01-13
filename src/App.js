@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Layout from './hoc/Layout/Layout';
 import HomePage from './containers/HomePage/HomePage';
 import AboutPage from './containers/AboutPage/AboutPage';

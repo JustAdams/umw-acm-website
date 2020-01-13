@@ -1,0 +1,12 @@
+
+.Post {
+    width: 200px;
+    height: 125px;
+    border: 1px solid black;
+    box-shadow: 0 5px 5px 2px grey;
+}
+
+.Post:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
