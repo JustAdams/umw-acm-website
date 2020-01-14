@@ -3,10 +3,15 @@
     width: 200px;
     height: 125px;
     border: 1px solid black;
-    box-shadow: 0 5px 5px 2px grey;
+    box-shadow: 5px 5px 5px grey;
 }
 
 .Post:hover {
-    background-color: lightgrey;
+    background-color: #A3C7DF;
     cursor: pointer;
+}
+
+.Post:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
