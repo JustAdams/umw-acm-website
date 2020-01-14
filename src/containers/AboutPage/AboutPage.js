@@ -1,12 +1,21 @@
 import React from 'react';
+import './AboutPage.css';
+
+const getExecBoard = () => {
+    return (
+        <article className='ExecBoard'>
+            <h3 className='ExecBoard-h'>Executive Board</h3>
+            <p className='ExecBoard-p'><strong>President</strong> Isabella Gransbury</p>
+            <p className='ExecBoard-p'><strong>Vice-President</strong> Justin Adams</p>
+            <p className='ExecBoard-p'><strong>Secretary</strong> Simeon Niesler</p>
+        </article>
+    );
+};
 
 const aboutPage = (props) => (
     <div>
         <h1>About Us</h1>
-        <h3>Executive Board</h3>
-        <p><strong>President</strong> Isabella Gransbury</p>
-        <p><strong>Vice-President</strong> Justin Adams</p>
-        <p><strong>Secretary</strong> Simeon Niesler</p>
+        {getExecBoard()}
     </div>
 );
 

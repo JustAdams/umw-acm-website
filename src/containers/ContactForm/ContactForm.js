@@ -3,6 +3,7 @@ import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import './ContactForm.css';
 import {updateObject} from '../../shared/utility';
+import {addMember} from '../../shared/fetch';
 
 class ContactForm extends Component {
     state = {

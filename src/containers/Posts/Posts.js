@@ -17,8 +17,8 @@ class Posts extends Component {
         this.setState({posts: fetchedPosts});
     }
 
-    selectPostHandler(id) {
-        alert(id);
+    selectPostHandler(content) {
+        alert(content);
     }
 
     render() {
@@ -30,8 +30,9 @@ class Posts extends Component {
                         <Post
                             key={post.post_id}
                             title={post.post_title}
+                            postDate={post.post_date.substring(0,10)} // substring reduces to year-month-day
                             content={post.post_content}
-                            clicked={() => this.selectPostHandler(post.id)} />
+                            clicked={() => this.selectPostHandler(post.post_content)} />
                     );
                 });
         };

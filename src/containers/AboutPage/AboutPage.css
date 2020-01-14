@@ -1,0 +1,17 @@
+
+.ExecBoard {
+    border: 5px ridge gold;
+    width: 400px;
+    height: 300px;
+    margin: 5% 20%;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.ExecBoard-h {
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+.ExecBoard-p {
+    padding: 15px;
+}

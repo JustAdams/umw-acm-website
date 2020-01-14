@@ -6,7 +6,7 @@ const post = (props) => (
         className='Post'
         onClick={props.clicked}>
         <h3>{props.title}</h3>
-        <p>{props.content}</p>
+        <p>{props.postDate}</p>
     </article>
 );
 
