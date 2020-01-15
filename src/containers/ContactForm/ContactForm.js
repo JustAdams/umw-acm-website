@@ -39,7 +39,11 @@ class ContactForm extends Component {
 
     addMemberHandler = (event) => {
         event.preventDefault();
-        console.log(this.state.contactForm);
+        const name = this.state.contactForm.name.value;
+        const email = this.state.contactForm.email.value;
+        const addResponse = addMember({name, email});
+        console.log(addResponse);
+        alert('Welcome to the club, ' + name + '!');
     }
 
     render() {

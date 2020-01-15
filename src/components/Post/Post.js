@@ -1,4 +1,5 @@
 import React from 'react';
+import PostImage from './PostImage';
 import './Post.css';
 
 const post = (props) => (
@@ -7,6 +8,7 @@ const post = (props) => (
         onClick={props.clicked}>
         <h3>{props.title}</h3>
         <p>{props.postDate}</p>
+        
     </article>
 );
 

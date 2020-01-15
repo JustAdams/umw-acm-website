@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import {Route} from 'react-router-dom';
 import './Posts.css';
 import Post from '../../components/Post/Post';
-import {getPosts} from '../../shared/fetch';
+import FullPost from './FullPost/FullPost';
+import {getPosts, getFullPost} from '../../shared/fetch';
+import PostImage from '../../components/Post/PostImage';
 
 class Posts extends Component {
     state = {
-        posts: []
+        posts: [],
+        fullPost: null
     }
 
     componentDidMount() {
@@ -17,8 +21,9 @@ class Posts extends Component {
         this.setState({posts: fetchedPosts});
     }
 
-    selectPostHandler(content) {
-        alert(content);
+    selectPostHandler = (id) => {
+        const fullPost = this.state.posts[id];
+        this.setState({fullPost: fullPost});
     }
 
     render() {
@@ -32,13 +37,28 @@ class Posts extends Component {
                             title={post.post_title}
                             postDate={post.post_date.substring(0,10)} // substring reduces to year-month-day
                             content={post.post_content}
-                            clicked={() => this.selectPostHandler(post.post_content)} />
+                            imageName={post.image_name}
+                            clicked={() => this.selectPostHandler(post.post_id)} />
                     );
                 });
         };
+        let fullPost = null;
+        if (this.state.fullPost) {
+            fullPost = (
+                <article>
+                    <h1>{this.state.fullPost.post_title}</h1>
+                    <PostImage
+                        imageName={this.state.fullPost.image_name} />
+                    <p>{this.state.fullPost.post_content}</p>
+                </article>
+            );
+        }
         return (
-            <div className='Posts'>
-                {newsPosts}
+            <div>
+                <section className='Posts'>
+                    {newsPosts}
+                </section>
+                {fullPost}
             </div>
         );
     };

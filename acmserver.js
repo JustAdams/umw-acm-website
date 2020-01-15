@@ -34,7 +34,6 @@ app.get("/news", async (req, res) => {
 });
 
 app.get("/news/post", async (req, res) => {
-    console.log(req.query);
     try {
         const template = "SELECT * FROM newsposts WHERE post_id = $1";
         const response = await pool.query(template, [

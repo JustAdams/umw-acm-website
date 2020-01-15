@@ -14,6 +14,7 @@ function App() {
             <Route path='/about' component={AboutPage} />
             <Route path='/news' component={NewsPage} />
             <Route path='/' exact component={HomePage} />
+            <Route render={() => <h1>404 - Not Found</h1>} />
             <Redirect to='/' />
           </Switch>
       </Layout>

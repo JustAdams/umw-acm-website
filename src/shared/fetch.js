@@ -35,6 +35,9 @@ module.exports = {
     getPosts: function() {
         return getNewsPosts().catch(handleError);
     },
+    getFullPost: function(postId) {
+        return getFullPost(postId).catch(handleError);
+    },
     addMember: function(name, email) {
         return addNewMember(name, email).catch(handleError);
     }
