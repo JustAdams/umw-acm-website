@@ -4,10 +4,10 @@ import './AboutPage.css';
 const getExecBoard = () => {
     return (
         <article className='ExecBoard'>
-            <h3 className='ExecBoard-h'>Executive Board</h3>
-            <p className='ExecBoard-p'><strong>President</strong> Isabella Gransbury</p>
-            <p className='ExecBoard-p'><strong>Vice-President</strong> Justin Adams</p>
-            <p className='ExecBoard-p'><strong>Secretary</strong> Simeon Niesler</p>
+            <h2 className='ExecBoard-h'>Executive Board</h2>
+            <p className='ExecBoard-p'><strong>President - </strong>Isabella Gransbury</p>
+            <p className='ExecBoard-p'><strong>Vice-President - </strong> Justin Adams</p>
+            <p className='ExecBoard-p'><strong>Secretary - </strong> Simeon Niesler</p>
         </article>
     );
 };

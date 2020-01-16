@@ -2,7 +2,9 @@ import React from 'react';
 
 const postImage = (props) => (
     <div>
-        <img src={require('../../assets/NewsImages/' + props.imageName)} />
+        {props.imageName ?
+            <img src={require('../../assets/NewsImages/' + props.imageName)} />
+            : null }
     </div>
 );
 

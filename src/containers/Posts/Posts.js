@@ -8,6 +8,7 @@ import PostImage from '../../components/Post/PostImage';
 
 class Posts extends Component {
     state = {
+        startPostNum: 0,
         posts: [],
         fullPost: null
     }
@@ -16,21 +17,22 @@ class Posts extends Component {
         this.loadAllPosts();
     }
 
+
+    // Loads all the posts from the database and sets into state
     async loadAllPosts() {
         const fetchedPosts = await getPosts();
         this.setState({posts: fetchedPosts});
     }
 
-    selectPostHandler = (id) => {
-        const fullPost = this.state.posts[id];
-        this.setState({fullPost: fullPost});
-    }
-
-    render() {
+    // On mount shows the most recent 3 posts
+    // Buttons alter the state startNum which is the post to start from
+    renderSelectedPosts() {
+        const startNum = this.state.startPostNum;
+        const sliceNum = startNum + 3;
         let newsPosts = <p>Error loading news posts!</p>
         if (!this.state.error) {
             newsPosts = 
-                this.state.posts.slice(0, 6).reverse().map(post => {
+                this.state.posts.slice(startNum, sliceNum).reverse().map(post => {
                     return (
                         <Post
                             key={post.post_id}
@@ -42,6 +44,21 @@ class Posts extends Component {
                     );
                 });
         };
+        return newsPosts;
+    }
+
+    // Sets full post to display from selected post id
+    selectPostHandler(id) {
+        const fullPost = this.state.posts[id];
+        this.setState({fullPost: fullPost});
+    }
+
+    // Buttons either shift the displayed posts to newer or older by 1
+    buttonChangeHandler(buttonDir) {
+    }
+
+
+    render() {
         let fullPost = null;
         if (this.state.fullPost) {
             fullPost = (
@@ -55,9 +72,18 @@ class Posts extends Component {
         }
         return (
             <div>
+                <button 
+                    onClick={this.buttonChangeHandler('newer')}
+                    className='postChangeButton'>
+                        Newer
+                </button>
                 <section className='Posts'>
-                    {newsPosts}
+                    {this.renderSelectedPosts()}
                 </section>
+                <button
+                    onClick={this.buttonChangeHandler('older')}
+                    className='postChangeButton'
+                    >Older</button>
                 {fullPost}
             </div>
         );
