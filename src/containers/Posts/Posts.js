@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom';
 import './Posts.css';
 import Post from '../../components/Post/Post';
 import FullPost from './FullPost/FullPost';
-import {getPosts, getFullPost} from '../../shared/fetch';
+//import {getPosts, getFullPost} from '../../shared/fetch';
 import PostImage from '../../components/Post/PostImage';
 
 class Posts extends Component {
@@ -20,13 +20,14 @@ class Posts extends Component {
 
     // Loads all the posts from the database and sets into state
     async loadAllPosts() {
-        const fetchedPosts = await getPosts();
-        this.setState({posts: fetchedPosts});
+        /*const fetchedPosts = await getPosts();
+        this.setState({posts: fetchedPosts});*/
     }
 
     // On mount shows the most recent 3 posts
     // Buttons alter the state startNum which is the post to start from
     renderSelectedPosts() {
+        /*
         const startNum = this.state.startPostNum;
         const sliceNum = startNum + 3;
         let newsPosts = <p>Error loading news posts!</p>
@@ -44,7 +45,7 @@ class Posts extends Component {
                     );
                 });
         };
-        return newsPosts;
+        return newsPosts; */
     }
 
     // Sets full post to display from selected post id

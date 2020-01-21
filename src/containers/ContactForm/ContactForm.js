@@ -3,7 +3,8 @@ import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import './ContactForm.css';
 import {updateObject} from '../../shared/utility';
-import {addMember} from '../../shared/fetch';
+import axios from '../../axios';
+import withErrorHandler from '../../hoc/WithErrorHandler/withErrorHandler';
 
 class ContactForm extends Component {
     state = {
@@ -26,6 +27,7 @@ class ContactForm extends Component {
         
     };
 
+
     inputChangedHandler = (event, formId) => {
         const updatedFormElement = updateObject(this.state.contactForm[formId], {
             value: event.target.value,
@@ -39,11 +41,18 @@ class ContactForm extends Component {
 
     addMemberHandler = (event) => {
         event.preventDefault();
-        const name = this.state.contactForm.name.value;
-        const email = this.state.contactForm.email.value;
-        const addResponse = addMember({name, email});
-        console.log(addResponse);
-        alert('Welcome to the club, ' + name + '!');
+        const memberInfo = {
+            name: this.state.contactForm.name.value,
+            email: this.state.contactForm.email.value,
+        }
+        console.log('test');
+        axios.post('/members.json', memberInfo)
+            .then(response => {
+                alert('Welcome to the club, ' + this.state.contactForm.name.value + '!');
+            })
+            .catch(error => {
+                alert('Error adding new member!');
+            });
     }
 
     render() {
@@ -79,4 +88,4 @@ class ContactForm extends Component {
     };
 };
 
-export default ContactForm;
+export default withErrorHandler(ContactForm, axios);
