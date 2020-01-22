@@ -5,6 +5,7 @@ import Layout from './hoc/Layout/Layout';
 import HomePage from './containers/HomePage/HomePage';
 import AboutPage from './containers/AboutPage/AboutPage';
 import NewsPage from './containers/NewsPage/NewsPage';
+import AdminPage from './containers/AdminPage/AdminPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path='/about' component={AboutPage} />
             <Route path='/news' component={NewsPage} />
             <Route path='/' exact component={HomePage} />
+            <Route path='/admine' exact component={AdminPage} />
             <Route render={() => <h1>404 - Not Found</h1>} />
             <Redirect to='/' />
           </Switch>

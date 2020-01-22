@@ -1,0 +1,12 @@
+.FullPost {
+    text-align: center;
+}
+
+.PostImage {
+    height: auto;
+    width: auto;
+}
+
+.PostContent {
+    text-decoration: underline;
+}

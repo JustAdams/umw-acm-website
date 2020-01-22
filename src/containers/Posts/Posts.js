@@ -3,8 +3,8 @@ import {Route} from 'react-router-dom';
 import './Posts.css';
 import Post from '../../components/Post/Post';
 import FullPost from './FullPost/FullPost';
-//import {getPosts, getFullPost} from '../../shared/fetch';
 import PostImage from '../../components/Post/PostImage';
+import axios from '../../axios';
 
 class Posts extends Component {
     state = {
@@ -14,20 +14,26 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        this.loadAllPosts();
+        axios.get( '/posts.json')
+            .then(res => {
+                const fetchedPosts = [];
+                for ( let key in res.data ) {
+                    fetchedPosts.push( {
+                        ...res.data[key],
+                        id: key
+                    });
+                }
+                this.setState({posts: fetchedPosts});
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }
 
-
-    // Loads all the posts from the database and sets into state
-    async loadAllPosts() {
-        /*const fetchedPosts = await getPosts();
-        this.setState({posts: fetchedPosts});*/
-    }
 
     // On mount shows the most recent 3 posts
     // Buttons alter the state startNum which is the post to start from
     renderSelectedPosts() {
-        /*
         const startNum = this.state.startPostNum;
         const sliceNum = startNum + 3;
         let newsPosts = <p>Error loading news posts!</p>
@@ -36,21 +42,22 @@ class Posts extends Component {
                 this.state.posts.slice(startNum, sliceNum).reverse().map(post => {
                     return (
                         <Post
-                            key={post.post_id}
-                            title={post.post_title}
-                            postDate={post.post_date.substring(0,10)} // substring reduces to year-month-day
-                            content={post.post_content}
-                            imageName={post.image_name}
-                            clicked={() => this.selectPostHandler(post.post_id)} />
+                            key={post.id}
+                            title={post.title}
+                            post_date={post.post_date.substring(0,10)} // substring reduces to year-month-day
+                            content={post.content}
+                            image_name={post.image_name}
+                            clicked={() => this.selectPostHandler(post)} />
                     );
                 });
         };
-        return newsPosts; */
+
+        return newsPosts;
     }
 
     // Sets full post to display from selected post id
     selectPostHandler(id) {
-        const fullPost = this.state.posts[id];
+        const fullPost = id;
         this.setState({fullPost: fullPost});
     }
 
@@ -60,14 +67,15 @@ class Posts extends Component {
 
 
     render() {
-        let fullPost = null;
+        let fullPost;
         if (this.state.fullPost) {
             fullPost = (
                 <article>
-                    <h1>{this.state.fullPost.post_title}</h1>
+                    <h1>{this.state.fullPost.title}</h1>
+                    <p>{this.state.fullPost.content}</p>
                     <PostImage
-                        imageName={this.state.fullPost.image_name} />
-                    <p>{this.state.fullPost.post_content}</p>
+                        image_name={this.state.fullPost.image_name} />
+                    
                 </article>
             );
         }

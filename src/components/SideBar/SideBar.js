@@ -6,7 +6,7 @@ import SideBarLogo from './SideBarLogo/SideBarLogo';
 const sideBar = (props) => (
     <div className='SideBar'>
         <ContactForm />
-        <p>temp pic until better found</p>
+        <p>temp pic until better found :-)</p>
         <SideBarLogo />
     </div>
 );

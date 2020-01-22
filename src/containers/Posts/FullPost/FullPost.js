@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import PostImage from '../../../components/Post/PostImage';
-import {getFullPost} from '../../../shared/fetch';
+import './FullPost.css';
 
 class FullPost extends Component {
     state = {
@@ -15,8 +15,6 @@ class FullPost extends Component {
     }
 
     async loadPost() {
-        const postData = await getFullPost(this.props.postId);
-        
     }
 
     render() {
@@ -24,10 +22,10 @@ class FullPost extends Component {
             <article className='FullPost'>
                 <p>Full Post</p>
                 <h3>{this.props.title}</h3>
-                <p className='PostContent'>{this.props.content}</p>
                 <PostImage
                     className='PostImage' 
-                    imageName={this.props.imageName} />
+                    image_name={this.props.image_name} />
+                    <p className='PostContent'>{this.props.content}</p>
             </article>
         );
     };
