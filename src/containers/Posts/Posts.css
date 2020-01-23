@@ -4,3 +4,36 @@
     flex-flow: row wrap;
     justify-content: center;
 }
+
+.FullPost {
+    padding: 2% 10%;
+    width: 50%;
+}
+
+@media (min-width: 500px) and (min-height: 400px) {
+    .FullPost {
+        width: 350px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 500px) and (min-height: 401px) {
+    .FullPost {
+        width: 450px;
+        height: 400px;
+    }
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+    .FullPost {
+        width: 700px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 1500px) and (min-height: 700px) {
+    .FullPost {
+        width: auto;
+        height: auto;
+    }
+}

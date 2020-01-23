@@ -70,7 +70,7 @@ class Posts extends Component {
         let fullPost;
         if (this.state.fullPost) {
             fullPost = (
-                <article>
+                <article className='FullPost'>
                     <h1>{this.state.fullPost.title}</h1>
                     <p>{this.state.fullPost.content}</p>
                     <PostImage

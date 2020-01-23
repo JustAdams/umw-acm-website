@@ -44,6 +44,7 @@ class ContactForm extends Component {
         const memberInfo = {
             name: this.state.contactForm.name.value,
             email: this.state.contactForm.email.value,
+            join_date: new Date()
         }
         console.log('test');
         axios.post('/members.json', memberInfo)

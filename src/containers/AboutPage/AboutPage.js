@@ -14,8 +14,9 @@ const getExecBoard = () => {
 
 const aboutPage = (props) => (
     <div>
-        <h1>About Us</h1>
         {getExecBoard()}
+        <br />
+        <h2><strong><a href = 'mailto: umwacm@gmail.com'>Contact Us</a></strong></h2>
     </div>
 );
 

@@ -1,0 +1,27 @@
+@media (min-width: 200px) and (min-height: 400px) {
+    .PostImage img {
+        width: 300px;
+        height: auto;
+    }
+}
+
+@media (min-width: 500px) and (min-height: 401px) {
+    .PostImage img {
+        width: 500px;
+        height: auto;
+    }
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+    .PostImage img {
+        width: 500px;
+        height: auto;
+    }
+}
+
+@media (min-width: 1500px) and (min-height: 700px) {
+    .PostImage img {
+        width: auto;
+        height: auto;
+    }
+}

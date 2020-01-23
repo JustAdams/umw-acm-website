@@ -6,3 +6,24 @@
     background-color: #488FBF;
     box-shadow: 0 5px 10px grey;
 }
+
+@media (min-width: 200px) and (min-height: 400px) {
+    .SideBar {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media (min-width: 700px) and (min-height: 401px) {
+    .SideBar {
+        width: 250px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+    .SideBar {
+        width: 400px;
+        height: 800px;
+    }
+}
