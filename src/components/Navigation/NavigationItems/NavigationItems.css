@@ -4,3 +4,14 @@
     list-style: none;
     display: flex;
 }
+
+.DesktopOnly {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    .NavigationItems {
+        padding: 0 0;
+        flex-flow: column;
+    }
+}

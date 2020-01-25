@@ -2,3 +2,11 @@
     padding: 10px;
     float: left;
 }
+
+@media (max-width: 499px) {
+    .Logo {
+        height: 60px;
+        width: auto;
+        float: right;
+    }
+}

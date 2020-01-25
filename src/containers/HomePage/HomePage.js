@@ -6,8 +6,8 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                <p>We are currently under construction.</p>
-                <p>Not currently mobile friendly, sorry.</p>
+                <p>Currently improving your mobile experience!</p>
+                <p>See the desktop page to join the mailing list</p>
                 
                 <hr />
                 <h1>University of Mary Washington</h1>

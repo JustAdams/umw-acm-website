@@ -10,6 +10,13 @@
     width: 50%;
 }
 
+@media (max-width: 499px) {
+    .FullPost {
+        width: auto;
+        height: auto;
+    }
+}
+
 @media (min-width: 500px) and (min-height: 400px) {
     .FullPost {
         width: 350px;

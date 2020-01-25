@@ -3,8 +3,8 @@ import acmLogo from '../../assets/acmlogo.png';
 import './Logo.css';
 
 const logo = (props) => (
-    <div className={'Logo'}>
-        <img src={acmLogo} alt='ACM Logo'/>
+    <div>
+        <img src={acmLogo} alt='ACM Logo' className={'Logo'}/>
     </div>
 );
 

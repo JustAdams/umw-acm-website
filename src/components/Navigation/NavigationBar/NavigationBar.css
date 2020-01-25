@@ -4,3 +4,9 @@
     text-align: left;
     box-shadow: 0 5px 10px grey;
 }
+
+@media (max-width: 499px) {
+    .NavigationBar {
+        height: 80px;
+    }
+}

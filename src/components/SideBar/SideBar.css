@@ -7,10 +7,9 @@
     box-shadow: 0 5px 10px grey;
 }
 
-@media (min-width: 200px) and (min-height: 400px) {
+@media (max-width: 500px) {
     .SideBar {
-        width: 200px;
-        height: auto;
+        display: none;
     }
 }
 
