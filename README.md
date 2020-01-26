@@ -4,9 +4,9 @@
 https://acm-umw-website.web.app/
 
 ---
-Description:
-
 Website for the University of Mary Washington programming club.
+
+Built from scratch using the following components:
 
 ```
 Built in Javascript and React.js.
