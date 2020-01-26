@@ -1,7 +1,13 @@
-![alt text](https://github.com/KoboldAdvocate/umw-acm-website/blob/master/src/assets/acmlogo.png "UMW ACM Logo") 
-# UMW ACM Website
 
+<img align='center' src='https://github.com/KoboldAdvocate/umw-acm-website/blob/master/src/assets/acmlogo.png' />
+
+<h1 align='center'>
+UMW ACM Website
+</h1>
+
+<p align='center'>
 https://acm-umw-website.web.app/
+
 
 ---
 Website for the University of Mary Washington programming club.
@@ -15,3 +21,4 @@ Axios handles the front/backend communication.
 
 Hosting frontend and backend both on Firebase.
 ```
+</p>
