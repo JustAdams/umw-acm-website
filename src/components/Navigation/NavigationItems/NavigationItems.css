@@ -5,11 +5,10 @@
     display: flex;
 }
 
-.DesktopOnly {
-    display: none;
-}
-
-@media (max-width: 500px) {
+@media (max-width: 499px) {
+    .DesktopOnly {
+        display: none;
+    }
     .NavigationItems {
         padding: 0 0;
         flex-flow: column;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Aux/Aux';
-import {updateObject} from '../../shared/utility';
 import axios from '../../axios';
 import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
@@ -11,16 +10,6 @@ class AdminPage extends Component {
         image_name: '',
         content: ''
     }
-
-    /*inputChangedHandler(event, id) {
-        const updatedPostElement = updateObject(this.state.post[id].value, {
-            value: event.target.value,
-        });
-        const updatedPost = updateObject(this.state.post, {
-            [id] : updatedPostElement
-        });
-        this.setState({post: updatedPost});
-    } */
 
     submitPostHandler = (event) => {
         event.preventDefault();
