@@ -5,15 +5,18 @@ import Post from '../../components/Post/Post';
 import FullPost from './FullPost/FullPost';
 import PostImage from '../../components/Post/PostImage';
 import axios from '../../axios';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Posts extends Component {
     state = {
         startPostNum: 0,
         posts: [],
-        fullPost: null
+        fullPost: null,
+        loading: false
     }
 
     componentDidMount() {
+        this.setState({loading: true});
         axios.get( '/posts.json')
             .then(res => {
                 const fetchedPosts = [];
@@ -23,10 +26,13 @@ class Posts extends Component {
                         id: key
                     });
                 }
-                this.setState({posts: fetchedPosts});
+                this.setState({
+                    posts: fetchedPosts,
+                    loading: false});
             })
             .catch(error => {
                 console.log(error);
+                this.setState({loading: false});
             });
     }
 
@@ -67,6 +73,10 @@ class Posts extends Component {
 
 
     render() {
+        let displayedPosts = this.renderSelectedPosts();
+        if (this.state.loading) {
+            displayedPosts = <Spinner />
+        }
         let fullPost;
         if (this.state.fullPost) {
             fullPost = (
@@ -81,18 +91,9 @@ class Posts extends Component {
         }
         return (
             <div>
-                <button 
-                    onClick={this.buttonChangeHandler('newer')}
-                    className='postChangeButton'>
-                        Newer
-                </button>
                 <section className='Posts'>
-                    {this.renderSelectedPosts()}
+                    {displayedPosts}
                 </section>
-                <button
-                    onClick={this.buttonChangeHandler('older')}
-                    className='postChangeButton'
-                    >Older</button>
                 {fullPost}
             </div>
         );
