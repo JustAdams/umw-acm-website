@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
 import './Posts.css';
 import Post from '../../components/Post/Post';
-import FullPost from './FullPost/FullPost';
 import PostImage from '../../components/Post/PostImage';
 import axios from '../../axios';
 import Spinner from '../../components/UI/Spinner/Spinner';
@@ -37,8 +35,9 @@ class Posts extends Component {
     }
 
 
-    // On mount shows the most recent 3 posts
+    // On mount shows the most recent 4 posts
     // Buttons alter the state startNum which is the post to start from
+    // TODO - make post shift buttons
     renderSelectedPosts() {
         const startNum = this.state.startPostNum;
         const sliceNum = startNum + 3;

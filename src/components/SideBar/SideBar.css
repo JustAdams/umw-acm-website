@@ -13,16 +13,20 @@
     }
 }
 
+@media (min-width: 501px) {
+    .SideBar {
+        width: 25%;
+    }
+}
+
 @media (min-width: 1000px) and (min-height: 401px) {
     .SideBar {
         width: 250px;
-        height: 600px;
     }
 }
 
 @media (min-width: 1500px) and (min-height: 700px) {
     .SideBar {
         width: 400px;
-        height: 800px;
     }
 }

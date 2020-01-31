@@ -1,5 +1,5 @@
 import React from 'react';
-import robotLogo from '../../../assets/robot.png';
+import robotLogo from '../../../assets/robot1.png';
 import './SideBarLogo.css';
 
 const sidebarLogo = () => (
