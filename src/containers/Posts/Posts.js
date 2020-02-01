@@ -7,7 +7,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Posts extends Component {
     state = {
-        startPostNum: 0,
+        startPostNum: null,
         posts: [],
         fullPost: null,
         loading: false
@@ -39,12 +39,13 @@ class Posts extends Component {
     // Buttons alter the state startNum which is the post to start from
     // TODO - make post shift buttons
     renderSelectedPosts() {
-        const startNum = this.state.startPostNum;
+        const startNum = this.state.posts ? this.state.posts.length : 0;
         const sliceNum = startNum + 4;
+        console.log(this.state.posts);
         let newsPosts = <p>Error loading news posts!</p>
         if (!this.state.error) {
             newsPosts = 
-                this.state.posts.slice(startNum, sliceNum).reverse().map(post => {
+                this.state.posts.slice(this.state.posts.length - 4, sliceNum).reverse().map(post => {
                     return (
                         <Post
                             key={post.id}
