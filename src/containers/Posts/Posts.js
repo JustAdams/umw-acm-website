@@ -40,7 +40,7 @@ class Posts extends Component {
     // TODO - make post shift buttons
     renderSelectedPosts() {
         const startNum = this.state.startPostNum;
-        const sliceNum = startNum + 3;
+        const sliceNum = startNum + 4;
         let newsPosts = <p>Error loading news posts!</p>
         if (!this.state.error) {
             newsPosts = 
