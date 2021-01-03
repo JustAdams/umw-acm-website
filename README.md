@@ -17,7 +17,7 @@ Built from scratch using the following components:
 ```
 Built in Javascript and React.js.
 
-Axios handles the front/backend communication.
+Axios handles the front/backend communication to a PostgreSQL database.
 
 Hosting frontend and backend both on Firebase.
 ```
