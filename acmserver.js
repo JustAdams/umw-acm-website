@@ -12,7 +12,7 @@ const Pool = require('pg').Pool;
 const config = {
     host: "localhost",
     user: "postgres",
-    password: "Justin100",
+    password: "______",
     database: "acmdatabase"
 };
 
